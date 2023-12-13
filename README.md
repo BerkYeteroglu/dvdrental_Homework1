@@ -1,4 +1,4 @@
-# dvdrental_Homework1
+# Homework1
 
 <div>
   Soru 1: Film tablosunda bulunan title ve description sütunlarındaki verileri sıralayınız.
