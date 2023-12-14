@@ -74,3 +74,34 @@
 
   Cevap 4: SELECT * FROM film WHERE title LIKE 'C%' AND length > 90 AND rental_rate = 2.99;
 </div>
+
+# Homework4
+<div>
+  Soru 1: film tablosunda bulunan replacement_cost sütununda bulunan birbirinden farklı değerleri sıralayınız.
+
+  Cevap 1: SELECT DISTINCT replacement_cost FROM film;
+</div>
+
+<div>
+  Soru 2: film tablosunda bulunan replacement_cost sütununda birbirinden farklı kaç tane veri vardır?
+
+  Cevap 2: SELECT COUNT(DISTINCT replacement_cost) FROM film;
+</div>
+
+<div>
+  Soru 3: film tablosunda bulunan film isimlerinde (title) kaç tanesini T karakteri ile başlar ve aynı zamanda rating 'G' ye eşittir?
+
+  Cevap 3: SELECT COUNT(title) FROM film WHERE title LIKE 'T%' AND rating = 'G';
+</div>
+
+<div>
+  Soru 4: country tablosunda bulunan ülke isimlerinden (country) kaç tanesi 5 karakterden oluşmaktadır?
+
+  Cevap 4: SELECT COUNT(country) FROM country WHERE country LIKE '_____';
+</div>
+
+<div>
+  Soru 5: city tablosundaki şehir isimlerinin kaç tanesi 'R' veya r karakteri ile biter?
+
+  Cevap 5: SELECT COUNT(city) FROM city WHERE city LIKE '%R' OR city LIKE '%r';
+</div>
