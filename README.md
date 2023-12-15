@@ -169,3 +169,70 @@
 
   Cevap 3: SELECT store_id, COUNT(*) FROM customer GROUP BY store_id; SELECT country_id, COUNT(*) FROM city GROUP BY country_id ORDER BY COUNT(*) DESC LIMIT 1;
 </div>
+
+# Homework8
+
+<div>
+  Soru 1: test veritabanınızda employee isimli sütun bilgileri id(INTEGER), name VARCHAR(50), birthday DATE, email VARCHAR(100) olan bir tablo oluşturalım.
+
+  Cevap 1:CREATE TABLE test ( id SERIAL PRIMARY KEY, name VARCHAR(50) NOT NULL, birthday DATE, email VARCHAR(100) );
+</div>
+
+<div>
+  Soru 2: Oluşturduğumuz employee tablosuna 'Mockaroo' servisini kullanarak 50 adet veri ekleyelim.
+
+  Cevap 2: 👍
+</div>
+
+<div>
+  Soru 3: Sütunların her birine göre diğer sütunları güncelleyecek 5 adet UPDATE işlemi yapalım.
+
+  Cevap 3: 
+            
+            UPDATE test
+            SET name = 'Elon'
+            WHERE id = 49;
+
+            UPDATE test
+            SET email = 'elonmusk@x.com'
+            WHERE id = 49;
+
+            UPDATE test
+            SET 
+              name = 'Reserved',
+              email = 'reserved@reserved.com'
+            WHERE id BETWEEN 1 AND 10;
+
+            UPDATE test
+            SET
+              name = 'Jeff',
+              email = 'jeffbezos@amazon.com'
+            WHERE id = 50;
+
+            UPDATE test
+            SET
+              name = 'Bill',
+              email = 'billgates@microsoft.com'
+            WHERE id = 48;
+</div>
+
+<div>
+  Soru 4: Sütunların her birine göre ilgili satırı silecek 5 adet DELETE işlemi yapalım.
+
+  Cevap 4:  
+            
+            DELETE FROM test
+            WHERE id = 13;
+
+            DELETE FROM test
+            WHERE id = 17;
+
+            DELETE FROM test
+            WHERE id = 33;
+
+            DELETE FROM test
+            WHERE id = 23;
+
+            DELETE FROM test
+            WHERE id BETWEEN 20 AND 30;
+</div>
