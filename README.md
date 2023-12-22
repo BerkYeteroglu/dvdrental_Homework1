@@ -276,3 +276,23 @@
 
   Cevap 3: SELECT rental_id, first_name, last_name FROM customer FULL JOIN rental ON customer.customer_id = rental.customer_id;
 </div>
+
+# Homework11
+
+<div>
+  Soru 1: actor ve customer tablolarında bulunan first_name sütunları için tüm verileri sıralayalım.
+
+  Cevap 1: (SELECT first_name FROM sakila.actor) UNION (SELECT first_name FROM sakila.customer);
+</div>
+
+<div>
+  Soru 2: actor ve customer tablolarında bulunan first_name sütunları için kesişen verileri sıralayalım.
+
+  Cevap 2: (SELECT first_name FROM sakila.actor) INTERSECT (SELECT first_name FROM sakila.customer);
+</div>
+
+<div>
+  Soru 3: actor ve customer tablolarında bulunan first_name sütunları için ilk tabloda bulunan ancak ikinci tabloda bulunmayan verileri sıralayalım.
+
+  Cevap 3: (SELECT first_name FROM sakila.actor) EXCEPT (SELECT first_name FROM sakila.customer);
+</div>
