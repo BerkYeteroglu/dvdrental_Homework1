@@ -296,3 +296,30 @@
 
   Cevap 3: (SELECT first_name FROM sakila.actor) EXCEPT (SELECT first_name FROM sakila.customer);
 </div>
+
+# Homework12
+
+<div>
+  Soru 1: film tablosunda film uzunluğu length sütununda gösterilmektedir. Uzunluğu ortalama film uzunluğundan fazla kaç tane film vardır?
+
+  Cevap 1: SELECT COUNT(*) FROM sakila.film WHERE length > (SELECT AVG(length) FROM sakila.film);
+</div>
+
+<div>
+  Soru 2: film tablosunda en yüksek rental_rate değerine sahip kaç tane film vardır?
+
+  Cevap 2: SELECT COUNT(*) FROM sakila.film WHERE rental_rate = (SELECT MAX(rental_rate) FROM sakila.film);
+</div>
+
+<div>
+  Soru 3: film tablosunda en düşük rental_rate ve en düşük replacement_cost değerlerine sahip filmleri sıralayınız.
+
+  Cevap 3: SELECT * FROM film WHERE rental_rate =  (SELECT MIN(rental_rate) FROM film) AND replacement_cost =(SELECT MIN(replacement_cost) FROM film);
+</div>
+
+<div>
+  Soru 4: payment tablosunda en fazla sayıda alışveriş yapan müşterileri(customer) sıralayınız.
+
+  Cevap 4: SELECT first_name, MAX(last_name) AS last_name, COUNT(*) AS total_payments FROM customer LEFT JOIN payment ON customer.customer_id = payment.customer_id GROUP BY first_name ORDER BY total_payments DESC;
+
+</div>
